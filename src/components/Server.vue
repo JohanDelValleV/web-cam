@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-toolbar dark color="primary" class="white--text">
-            <v-btn icon>
+            <v-btn icon to="/main">
                 <v-icon medium>arrow_back</v-icon>
             </v-btn>
             <v-toolbar-title>Cámara</v-toolbar-title>

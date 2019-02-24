@@ -1,68 +1,32 @@
 <template>
-  <v-container>
-    <a href="/#/server">Start Video Stream</a>
-  <a href="/#/server">Visualize Video Stream</a>
-  </v-container>
+  <v-app>
+    <v-container>
+      <div style="max-width: 400px; margin: auto;">
+        <v-card color="#DD2C00">
+          <v-card-title primary-title>
+            <h3 class="headline">Menú principal</h3>
+          </v-card-title>
+          <v-card-actions>
+            <v-btn to="/server">Start Video Stream</v-btn>
+            <v-btn to="/client">Visualize Video Stream</v-btn>
+          </v-card-actions>
+        </v-card>
+      </div>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
   export default {
     data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader'
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify'
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify'
-        }
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com'
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com'
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuetifyjs.com'
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs'
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify'
-        }
-      ],
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer'
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/layout/pre-defined'
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
-        }
-
-      ]
+      
     })
   }
 </script>
 
 <style>
+  h3{
+    color: white;
+  }
 
 </style>
