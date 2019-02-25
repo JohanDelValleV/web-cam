@@ -1,9 +1,9 @@
 <template>
     <v-app>
         <v-toolbar dark color="primary" class="white--text">
-            <v-btn icon to="/main">
+            <a href="/main" icon>
                 <v-icon medium>arrow_back</v-icon>
-            </v-btn>
+            </a>
             <v-toolbar-title>Cámara</v-toolbar-title>
         </v-toolbar>
         <v-snackbar
@@ -25,14 +25,16 @@
                 Close
             </v-btn>
         </v-snackbar>
-        <video src="" id="video" style="width:700px; height: 350px;" autoplay="true"></video>
-        <canvas style="display:none;" id="preview"></canvas>
+        <div style="max-width: 700px; margin: auto;">
+            <video src="" id="video" style="width:700px; " autoplay="true"></video>
+            <canvas style="display:none;" id="preview"></canvas> 
+        </div>
     </v-app>
 </template>
 
 <script>
     import io from 'socket.io-client';
-    
+    import $ from 'jquery';
     export default {
         data() {
             return {
@@ -53,7 +55,7 @@
             loadFail(){
                 this.text='Error al activar la cámara';
                 this.snackbar=true;
-            },
+            }
         },
         mounted() {
             var canvas = document.getElementById("preview");

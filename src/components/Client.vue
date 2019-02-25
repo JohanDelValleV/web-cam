@@ -6,8 +6,29 @@
             </v-btn>
             <v-toolbar-title>Visualización</v-toolbar-title>
         </v-toolbar>
-        <img id="play">
-        <div id="logger"></div>
+        <v-snackbar
+            v-model="snackbar"
+            :bottom="y === 'bottom'"
+            :left="x === 'left'"
+            :multi-line="mode === 'multi-line'"
+            :right="x === 'right'"
+            :timeout="timeout"
+            :top="y === 'top'"
+            :vertical="mode === 'vertical'"
+            >
+            {{ text }}
+            <v-btn
+                color="secondary"
+                flat
+                @click="snackbar = false"
+            >
+                Close
+            </v-btn>
+        </v-snackbar>
+        <div style="max-width: 700px; margin: auto;">
+            <img id="play" width="700px">
+            <div id="logger"></div>
+        </div>
     </v-app>
 </template>
 
@@ -17,7 +38,13 @@
     export default {
         data() {
             return {
-                socket : io('localhost:3001')
+                socket : io('localhost:3001'),
+                snackbar: false,
+                y: 'bottom',
+                x: null,
+                mode: '',
+                timeout: 4000,
+                text: ''
             }
         },
         mounted(){

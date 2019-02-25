@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-container>
-      <div style="max-width: 400px; margin: auto;">
-        <v-card color="#DD2C00">
+      <div style="max-width: 800px; margin: auto; margin-top: 80px;">
+        <v-card color="#DD2C00" style="padding: 15%;">
           <v-card-title primary-title>
             <h3 class="headline">Menú principal</h3>
           </v-card-title>
@@ -20,7 +20,13 @@
   export default {
     data: () => ({
       
-    })
+    }),
+    mounted(){
+      navigator.getUserMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia );    
+        if(navigator.getUserMedia){
+          navigator.getUserMedia({video: false, audio: false});
+        }
+    }
   }
 </script>
 
