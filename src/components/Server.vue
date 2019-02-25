@@ -34,7 +34,6 @@
 
 <script>
     import io from 'socket.io-client';
-    import $ from 'jquery';
     export default {
         data() {
             return {
