@@ -22,10 +22,6 @@
       
     }),
     mounted(){
-      navigator.getUserMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia );    
-        if(navigator.getUserMedia){
-          navigator.getUserMedia({video: false, audio: false});
-        }
     }
   }
 </script>

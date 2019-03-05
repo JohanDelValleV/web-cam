@@ -34,7 +34,6 @@
 
 <script>
     import io from 'socket.io-client';
-    import $ from 'jquery';
     export default {
         data() {
             return {
@@ -74,7 +73,7 @@
             setInterval(function(){
                 context.drawImage(video,0,0,context.width,context.height);
                 socket.emit('stream',canvas.toDataURL('image/jpeg'));
-            },1);
+            },3);
             
             
         }

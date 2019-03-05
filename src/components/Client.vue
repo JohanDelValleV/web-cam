@@ -27,7 +27,6 @@
         </v-snackbar>
         <div style="max-width: 700px; margin: auto;">
             <img id="play" width="700px">
-            <div id="logger"></div>
         </div>
     </v-app>
 </template>
@@ -38,13 +37,13 @@
     export default {
         data() {
             return {
-                socket : io('localhost:3001'),
+                socket : io('LAPTOP-LESS:3001'),
                 snackbar: false,
                 y: 'bottom',
                 x: null,
                 mode: '',
                 timeout: 4000,
-                text: ''
+                text: '',
             }
         },
         mounted(){
